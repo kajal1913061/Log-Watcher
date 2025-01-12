@@ -1,0 +1,24 @@
+In this code, we have a class named Watcher which extends events.EventEmitter class. Watcher class has a queue named store that will store the last 10 lines.
+
+Watcher class has three methods defined:
+
+getLogs():- This method will return the last 10 lines stored in the queue
+
+start():- This method will open the log file and read the whole file and initialized the watcher. The fs.watch() method will check the file at an interval of 1000ms.
+
+watch():- This method will return the lines whenever updated and emit an event to notify the client.
+
+We have covered the first four constraints from the problem statement.
+
+The next constraint is that the web page should not be in a loading state. The web page should be updated automatically, which means that the server notifies the client instead of the client asking for an update.
+
+To fulfill this requirement we will be using web sockets.
+
+What is a Web Socket?
+
+Web Socket is a protocol that provides full-duplex(multiway) communication i.e allows communication in both directions simultaneously. It is a modern web technology in which there is a continuous connection between the user’s browser(client) and the server. In this type of communication, between the web server and the web browser, both of them can send messages to each other at any point in time.
+
+So let’s create a server that establishes a two-way connection and the client can get the logs by requesting to the server.
+
+what's tail -f cmd?
+find the last 10 lines
